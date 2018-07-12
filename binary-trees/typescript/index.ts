@@ -3,7 +3,10 @@
  * contributed by madreason
  * *reset*
  */
-/// <reference path="./Include/node/index.d.ts" />
+
+declare var process: {
+  argv: string[];
+}
 
 interface ITreeNode {
   left?: ITreeNode;
