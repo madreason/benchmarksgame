@@ -8,37 +8,45 @@ declare var process: {
   argv: string[];
 }
 
-interface ITreeNode {
-  left?: ITreeNode;
-  right?: ITreeNode;
+class TreeNode {
+    constructor(public left?: TreeNode, public right?: TreeNode) { }
 }
 
-function check(item: ITreeNode): number {
-  let { left, right } = item;
-  return left ? 1 + check(left) + check(right) : 1;
+// function TreeNode(left, right) {
+//     return {left: left, right: right};
+// }
+
+function check(item: TreeNode): number {
+    let { left, right } = item;
+    return left ? 1 + check(left) + check(right) : 1;
 }
 
-function bottomUpTree(depth: number): ITreeNode {
-  return depth > 0 ? { left: bottomUpTree(depth - 1), right: bottomUpTree(depth - 1) } : {};
+function bottomUpTree(depth: number): TreeNode {
+    let nextDepth = depth - 1;
+    return depth > 0 ? new TreeNode(bottomUpTree(nextDepth), bottomUpTree(nextDepth)) : new TreeNode();
 }
 
-const n = +process.argv[2];
-const minDepth = 4;
-const maxDepth = Math.max(minDepth + 2, n);
-const stretchDepth = maxDepth + 1;
-const frontDepth = maxDepth + minDepth;
+function main(): void {
+    console.time("queryTime");
 
-let checkSum = check(bottomUpTree(stretchDepth));
-console.log("stretch tree of depth " + stretchDepth + "\t check: " + checkSum);
+    const C_N = +process.argv[2];
+    const C_MINDEPTH = 4;
+    const C_MAXDEPTH = Math.max(C_MINDEPTH + 2, C_N);
+    const C_STRETCHDEPTH = C_MAXDEPTH + 1;
+    const C_FRONTDEPTH = C_MAXDEPTH + C_MINDEPTH;
 
-const longLivedTree = bottomUpTree(maxDepth);
-for (let depth = minDepth; depth <= maxDepth; depth += 2) {
-  let iterations = 1 << (frontDepth - depth);
+    console.log("stretch tree of depth " + C_STRETCHDEPTH + "\t check: " + check(bottomUpTree(C_STRETCHDEPTH)));
+    const longLivedTree = bottomUpTree(C_MAXDEPTH);
+    for (let depth = C_MINDEPTH, checkSum = 0; depth <= C_MAXDEPTH; depth += 2) {
+        const iterations = 1 << (C_FRONTDEPTH - depth);
+        for (let i = 1; i <= iterations; i++) {
+            checkSum += check(bottomUpTree(depth));
+        }
+        console.log(iterations + "\t trees of depth " + depth + "\t check: " + checkSum);
+    }
+    console.log("long lived tree of depth " + C_MAXDEPTH + "\t check: " + check(longLivedTree));
 
-  checkSum = 0;
-  for (let i = 1; i <= iterations; i++) {
-    checkSum += check(bottomUpTree(depth));
-  }
-  console.log(iterations + "\t trees of depth " + depth + "\t check: " + checkSum);
+    console.timeEnd("queryTime");
 }
-console.log("long lived tree of depth " + maxDepth + "\t check: " + check(longLivedTree));
+
+main();
