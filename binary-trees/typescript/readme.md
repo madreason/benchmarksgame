@@ -1,4 +1,4 @@
-# index.ts
+# index_single.ts
 
 ### MAKE:
 mv binarytrees.typescript binarytrees.ts
