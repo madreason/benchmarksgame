@@ -2,6 +2,7 @@
 
 ### MAKE:
 mv binarytrees.typescript binarytrees.ts
+
 /opt/src/node-v10.5.0-linux-x64/bin/tsc --alwaysStrict --removeComments -t ESNEXT binarytrees.ts
 
 ### COMMAND LINE:
@@ -11,6 +12,7 @@ mv binarytrees.typescript binarytrees.ts
 
 ### MAKE:
 mv binarytrees.typescript binarytrees.ts
+
 /opt/src/node-v10.5.0-linux-x64/bin/tsc --alwaysStrict --removeComments -t ESNEXT binarytrees.ts
 
 ### COMMAND LINE:
