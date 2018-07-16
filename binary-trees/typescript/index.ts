@@ -27,8 +27,6 @@ function bottomUpTree(depth: number): TreeNode {
 }
 
 function main(): void {
-    console.time("queryTime");
-
     const C_N = +process.argv[2];
     const C_MINDEPTH = 4;
     const C_MAXDEPTH = Math.max(C_MINDEPTH + 2, C_N);
@@ -45,8 +43,6 @@ function main(): void {
         console.log(iterations + "\t trees of depth " + depth + "\t check: " + checkSum);
     }
     console.log("long lived tree of depth " + C_MAXDEPTH + "\t check: " + check(longLivedTree));
-
-    console.timeEnd("queryTime");
 }
 
 main();
