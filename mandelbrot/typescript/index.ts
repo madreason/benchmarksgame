@@ -66,12 +66,12 @@ if (worker_threads.isMainThread) {
 
     function doCalc(Cr: number, Ci: number, limit: number): number {
         const iter = 50;
-        let Zr = 0,
-            Zi = 0,
-            Tr = 0,
-            Ti = 0;
+        let Zr = 0.0,
+            Zi = 0.0,
+            Tr = 0.0,
+            Ti = 0.0;
         for (let i = 0; i < iter && Tr + Ti <= limit; i++) {
-            Zi = 2 * Zr * Zi + Ci,
+            Zi = 2.0 * Zr * Zi + Ci,
                 Zr = Tr - Ti + Cr,
                 Tr = Zr * Zr,
                 Ti = Zi * Zi;
@@ -85,7 +85,7 @@ if (worker_threads.isMainThread) {
     let byte_acc = 0,
         bit_num = 0,
         it = 0;
-    const limit = 4,
+    const limit = 4.0,
           size = workerData.size,
           xd = 2 / size;
     for (let y = workerData.start; y < workerData.end; y++) {
