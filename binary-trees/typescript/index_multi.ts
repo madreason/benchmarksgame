@@ -48,7 +48,7 @@ function bottomUpTree(depth: number): ITreeNode {
 if (worker_threads.isMainThread) {
 
     (async function () {
-        const C_N = +process.argv[2],
+        const C_N = +process.argv[2] || 21,
             C_MINDEPTH = 4,
             C_MAXDEPTH = Math.max(C_MINDEPTH + 2, C_N),
             C_STRETCHDEPTH = C_MAXDEPTH + 1,
