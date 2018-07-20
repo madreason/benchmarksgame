@@ -27,7 +27,7 @@ function bottomUpTree(depth: number): TreeNode {
 }
 
 function main(): void {
-    const C_N = +process.argv[2];
+    const C_N = +process.argv[2] || 21;
     const C_MINDEPTH = 4;
     const C_MAXDEPTH = Math.max(C_MINDEPTH + 2, C_N);
     const C_STRETCHDEPTH = C_MAXDEPTH + 1;
