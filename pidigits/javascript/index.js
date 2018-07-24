@@ -28,7 +28,7 @@
     // preallocated buffer size
     let bufsize = (10/*value of pi*/ + 2/*\t:*/ + n.toString().length/*index of slice*/ + 1/*\n*/) * (n / 10)/*line count*/;
     // croped buffer size
-    for (let i = 10; i < n; i *= 10) {
+    for (let i = 10, length = 10 ** (Math.log10(n) >>> 0); i < length; i *= 10) {
         bufsize -= i - 1;
     }
 
