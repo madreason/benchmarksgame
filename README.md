@@ -9,10 +9,17 @@ Repo: https://salsa.debian.org/benchmarksgame-team/benchmarksgame
 
 Score | Language | Secs | Mem | CPU | Code
 --- | --- | --- | --- | --- | ---
-8.8 | [TypeScript #3](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/binarytrees-typescript-3.html) | 22.42 | 1,056,640 | 76.52 | [github](https://github.com/madreason/benchmarksgame/blob/master/binary-trees/typescript/index_multi.ts)
+8.7 | [TypeScript #4](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/binarytrees-typescript-4.html) | 22.17 | 1,072,864 | 74.99 | [github](https://github.com/madreason/benchmarksgame/blob/master/binary-trees/typescript/index_multi.ts)
 
 ## [Mandelbrot](https://benchmarksgame-team.pages.debian.net/benchmarksgame/performance/mandelbrot.html):
 
 Score | Language | Secs | Mem | CPU | Code
 --- | --- | --- | --- | --- | ---
 9.5 | [TypeScript #2](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/mandelbrot-typescript-2.html) | 14.34 | 104,824 | 51.79 | [github](https://github.com/madreason/benchmarksgame/blob/master/mandelbrot/typescript/index.ts)
+
+
+## [pidigits](https://benchmarksgame-team.pages.debian.net/benchmarksgame/performance/pidigits.html):
+
+Score | Language | Secs | Mem | CPU | Code
+--- | --- | --- | --- | --- | ---
+17 | [Node js #3](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/pidigits-node-3.html) | 27.06 | 62,388 | 27.11 | [github](https://github.com/madreason/benchmarksgame/blob/master/pidigits/javascript/index.js)
