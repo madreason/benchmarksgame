@@ -40,13 +40,13 @@
         if (num > acc) continue;
 
         //#region extractDigit(3);
-        let tmp2 = 3n * num + acc;
-        let d3 = tmp2 / den;
+        let tmp = 3n * num + acc;
+        let d3 = tmp / den;
         //#endregion
 
         //#region extractDigit(4);
-        tmp2 = tmp2 + num;
-        let d4 = tmp2 / den;
+        tmp = tmp + num;
+        let d4 = tmp / den;
         //#endregion
 
         if (d3 !== d4) continue;
