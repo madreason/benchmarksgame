@@ -22,4 +22,4 @@ Score | Language | Secs | Mem | CPU | Code
 
 Score | Language | Secs | Mem | CPU | Code
 --- | --- | --- | --- | --- | ---
-17 | [Node js #3](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/pidigits-node-3.html) | 27.06 | 62,388 | 27.11 | [github](https://github.com/madreason/benchmarksgame/blob/master/pidigits/javascript/index.js)
+8.9 | [Node js #4](https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/pidigits-node-4.html) | 14.47 | 62,316 | 14.53 | [github](https://github.com/madreason/benchmarksgame/blob/master/pidigits/javascript/index.js)
